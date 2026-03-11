@@ -3,133 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuclear Energy: Saving Our Planet</title>
+    <title>THE SILENT GIANT | Nuclear Energy 2026</title>
     
-    <style>
-        body { 
-            background-color: #0b1120 !important; 
-            color: #ffffff !important; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; text-align: center; background: linear-gradient(to bottom, #064e3b, #0b1120); }
-        .neon-text { color: #22c55e; }
-        .btn { background-color: #22c55e; color: #000; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
-        .chart-section { margin: 60px 0; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid #334155; }
-        .chart-placeholder { height: 300px; width: 100%; position: relative; }
-        h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        h2 { font-size: 2.2rem; border-left: 5px solid #22c55e; padding-left: 15px; margin-bottom: 20px; }
-        p { font-size: 1.2rem; color: #cbd5e1; }
-    </style>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@300;400;700&display=swap');
+        
+        body { 
+            background-color: #020617; 
+            color: #f8fafc; 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .font-tech { font-family: 'Orbitron', sans-serif; }
+        
+        /* 霓虹发光效果 */
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.8), 0 0 20px rgba(34, 197, 94, 0.4);
+        }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: #22c55e;
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+            transform: translateY(-5px);
+        }
 
-    <header class="hero">
-        <div class="container">
-            <h1 class="font-black tracking-tighter">STOP WARMING. <br><span class="neon-text">START NUCLEAR.</span></h1>
-            <p>The only zero-emission energy source capable of replacing fossil fuels 24/7.</p>
-            <a href="#evidence" class="btn">SEE THE DATA</a>
+        .bg-grid {
+            background-image: linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-grid">
+
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-green-500/20 rounded-full animate-pulse"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6">
+            <p class="font-tech text-green-400 tracking-[0.5em] mb-4 uppercase text-sm">Status: Critical Climate Change</p>
+            <h1 class="font-tech text-6xl md:text-9xl font-black mb-6 tracking-tighter italic">
+                THE SILENT <br><span class="text-green-500 neon-glow">GIANT</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-xl md:text-2xl text-slate-400 font-light mb-10 leading-relaxed">
+                While the world debates, a proven hero waits in the shadows. <br>
+                <strong>Dense. Reliable. Zero-Carbon.</strong>
+            </p>
+            <a href="#story" class="inline-block bg-green-500 text-black font-black px-10 py-5 rounded-none skew-x-[-12deg] hover:bg-white transition-all text-xl uppercase">
+                Reveal the Truth
+            </a>
         </div>
     </header>
 
-    <div class="container" id="evidence">
+    <main id="story" class="max-w-7xl mx-auto px-6 py-32 space-y-40">
+
+        <section class="grid lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="font-tech text-4xl font-bold mb-8 text-green-500">01. THE FOOTPRINT</h2>
+                <p class="text-2xl font-bold mb-6 italic text-white">"It takes 3,000,000 solar panels to match one nuclear reactor."</p>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                    Nuclear energy has the highest energy density on the planet. One uranium pellet, the size of your fingertip, contains as much energy as a ton of coal or 149 gallons of oil.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-6 glass-card">
+                        <p class="text-4xl font-black text-white">100x</p>
+                        <p class="text-sm text-green-500 uppercase tracking-widest mt-2 font-bold">Less Land Used</p>
+                    </div>
+                    <div class="p-6 glass-card">
+                        <p class="text-4xl font-black text-white">Zero</p>
+                        <p class="text-sm text-green-500 uppercase tracking-widest mt-2 font-bold">Direct Smoke</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card p-10 rounded-2xl">
+                <h3 class="font-tech text-xs mb-6 text-slate-500">EMISSION DATA / LIFECYCLE ANALYSIS</h3>
+                <div class="h-[400px]">
+                    <canvas id="emissionChart"></canvas>
+                </div>
+            </div>
+        </section>
+
         
-        <section class="chart-section">
-            <h2 class="font-bold">Lowest Carbon Footprint</h2>
-            <p>Per unit of electricity, nuclear produces the least amount of CO₂ emissions over its entire lifecycle—even less than solar power.</p>
-            <div class="chart-placeholder">
-                <canvas id="emissionChart"></canvas>
+
+        <section class="text-center max-w-4xl mx-auto">
+            <h2 class="font-tech text-4xl font-bold mb-8 text-green-500">02. THE HEARTBEAT</h2>
+            <p class="text-3xl font-black mb-10 text-white">A grid that never sleeps.</p>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="p-10 glass-card">
+                    <p class="text-slate-500 text-xs font-bold uppercase mb-4">Nuclear</p>
+                    <div class="text-6xl font-black text-green-500">92%</div>
+                    <p class="mt-4 text-sm opacity-50 italic">Consistent Baseload</p>
+                </div>
+                <div class="p-10 glass-card">
+                    <p class="text-slate-500 text-xs font-bold uppercase mb-4">Wind</p>
+                    <div class="text-6xl font-black text-blue-500">35%</div>
+                    <p class="mt-4 text-sm opacity-50 italic">Weather Dependent</p>
+                </div>
+                <div class="p-10 glass-card">
+                    <p class="text-slate-500 text-xs font-bold uppercase mb-4">Solar</p>
+                    <div class="text-6xl font-black text-yellow-500">25%</div>
+                    <p class="mt-4 text-sm opacity-50 italic">Sun Dependent</p>
+                </div>
             </div>
-            
+            <p class="text-slate-400 text-lg">
+                Modern civilization runs 24/7. To bridge the gap when the sun sets and the wind stops, we need a heart that beats without interruption.
+            </p>
         </section>
 
-        <section class="chart-section">
-            <h2 class="font-bold">Power Without Interruption</h2>
-            <p>While wind and solar depend on the weather, nuclear energy has a "Capacity Factor" of 92%, making it the most reliable backbone for a green grid.</p>
-            <div class="chart-placeholder">
-                <canvas id="reliabilityChart"></canvas>
+        <section class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="order-2 lg:order-1 glass-card p-10 rounded-2xl">
+                <h3 class="font-tech text-xs mb-6 text-slate-500">SAFETY STATS / LOG SCALE</h3>
+                <div class="h-[400px]">
+                    <canvas id="safetyChart"></canvas>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2">
+                <h2 class="font-tech text-4xl font-bold mb-8 text-green-500">03. THE TRUTH</h2>
+                <p class="text-2xl font-bold mb-6 text-white">Fear is a ghost. Science is the reality.</p>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                    While spectacular accidents capture headlines, the silent daily toll of fossil fuel pollution kills millions. Statistically, nuclear is the <span class="text-white font-bold underline decoration-green-500">safest energy source ever deployed.</span>
+                </p>
+                <div class="border-l-4 border-green-500 pl-6 py-2">
+                    <p class="text-green-500 font-bold tracking-widest text-sm italic italic">"Every TWh of nuclear replaces coal and saves hundreds of lives."</p>
+                </div>
             </div>
         </section>
 
-        <section class="chart-section">
-            <h2 class="font-bold">The Safest Way to Power the World</h2>
-            <p>Statistically, nuclear energy causes fewer deaths per unit of energy than coal, oil, and even wind power. It's time to follow the science, not the fear.</p>
-            <div class="chart-placeholder">
-                <canvas id="safetyChart"></canvas>
+        
+
+        <section class="py-20 text-center relative">
+            <div class="absolute inset-0 bg-green-500/5 blur-[100px]"></div>
+            <div class="relative z-10">
+                <h2 class="font-tech text-5xl md:text-7xl font-black mb-12 leading-tight">
+                    TIME IS <span class="text-red-500">RUNNING OUT</span>.<br>
+                    USE THE TOOL THAT WORKS.
+                </h2>
+                <button onclick="alert('Join the Core Action Network!')" class="bg-green-500 text-black font-black px-16 py-6 rounded-none text-2xl hover:scale-110 transition-all shadow-[0_0_50px_rgba(34,197,94,0.4)]">
+                    SUPPORT THE CORE
+                </button>
             </div>
-            
         </section>
 
-        <section style="text-align: center; padding: 80px 0;">
-            <h2 style="border:none;">Save the Climate. <span class="neon-text">Support Nuclear.</span></h2>
-            <p>Join thousands of scientists and environmentalists in advocating for the most powerful tool against climate change.</p>
-            <button onclick="alert('Thank you for joining the clean energy movement!')" class="btn">JOIN THE INITIATIVE</button>
-        </section>
-    </div>
+    </main>
 
-    <footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.8rem; border-top: 1px solid #1e293b;">
-        DATA SOURCES: IPCC, UNECE, OUR WORLD IN DATA (2026)
+    <footer class="py-20 px-6 border-t border-slate-900 text-center">
+        <p class="font-tech text-xs text-slate-600 tracking-[0.3em]">© 2026 THE CORE INITIATIVE | POWERING THE FUTURE RESPONSIBLY</p>
     </footer>
 
     <script>
-        const chartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#ffffff' } } },
-            scales: {
-                y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' } },
-                x: { ticks: { color: '#94a3b8' } }
-            }
-        };
+        // 图表默认全局设置
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.font.family = "'Inter', sans-serif";
 
-        // 1. Emission Chart
+        // 1. Emission Chart (Lifecycle)
         new Chart(document.getElementById('emissionChart'), {
             type: 'bar',
             data: {
-                labels: ['Coal', 'Gas', 'Solar', 'Wind', 'Nuclear'],
+                labels: ['Coal', 'Natural Gas', 'Solar', 'Wind', 'Nuclear'],
                 datasets: [{
-                    label: 'CO2 eq per kWh',
-                    data: [820, 490, 48, 12, 4],
-                    backgroundColor: ['#ef4444', '#f97316', '#fbbf24', '#38bdf8', '#22c55e']
+                    label: 'CO2 Emission (g/kWh)',
+                    data: [820, 490, 45, 12, 4],
+                    backgroundColor: ['#ef4444', '#f97316', '#fbbf24', '#38bdf8', '#22c55e'],
+                    borderRadius: 5
                 }]
             },
-            options: chartOptions
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { grid: { color: 'rgba(255,255,255,0.05)' } },
+                    x: { grid: { display: false } }
+                }
+            }
         });
 
-        // 2. Reliability Chart
-        new Chart(document.getElementById('reliabilityChart'), {
-            type: 'bar',
-            data: {
-                labels: ['Nuclear (92%)', 'Natural Gas (55%)', 'Wind (35%)', 'Solar (25%)'],
-                datasets: [{
-                    label: 'Capacity Factor (%)',
-                    data: [92, 55, 35, 25],
-                    backgroundColor: '#22c55e'
-                }]
-            },
-            options: chartOptions
-        });
-
-        // 3. Safety Chart (Logarithmic)
+        // 2. Safety Chart (Logarithmic)
         new Chart(document.getElementById('safetyChart'), {
             type: 'bar',
             data: {
                 labels: ['Coal', 'Oil', 'Gas', 'Wind', 'Solar', 'Nuclear'],
                 datasets: [{
-                    label: 'Death Rate (per TWh)',
+                    label: 'Death Rate per TWh',
                     data: [24.6, 18.4, 2.8, 0.04, 0.02, 0.01],
-                    backgroundColor: ['#ef4444', '#f87171', '#fb923c', '#38bdf8', '#fbbf24', '#22c55e']
+                    backgroundColor: ['#ef4444', '#f87171', '#fb923c', '#38bdf8', '#fbbf24', '#22c55e'],
+                    borderRadius: 5
                 }]
             },
             options: {
-                ...chartOptions,
-                scales: { y: { type: 'logarithmic', title: { display: true, text: 'Deaths (Log Scale)' } } }
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { 
+                        type: 'logarithmic',
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        title: { display: true, text: 'Deaths (Log Scale)' }
+                    }
+                }
             }
         });
     </script>
