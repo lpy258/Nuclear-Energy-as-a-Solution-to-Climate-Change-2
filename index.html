@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Energy: The Ultimate Climate Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #0b1120;
+            color: #f8fafc;
+        }
+        .text-neon {
+            color: #22c55e;
+            text-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+        }
+        .bg-neon {
+            background-color: #22c55e;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <header class="relative w-full h-screen flex flex-col items-center justify-center text-center px-4">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0b1120] z-10"></div>
+        
+        <div class="z-20 max-w-4xl" data-aos="fade-up" data-aos-duration="1500">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">
+                Time is running out for our planet.<br>
+                <span class="text-neon mt-2 block">But we have the answer.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 mb-10 font-light">
+                In the face of an escalating climate crisis, wind and solar alone cannot sustain human progress.<br>We need a <strong class="text-white">zero-carbon, all-weather, high-density</strong> ultimate energy source.
+            </p>
+            <a href="#data-section" class="bg-neon text-gray-900 font-bold py-4 px-8 rounded-full text-lg transition-transform hover:scale-105 inline-block">
+                Uncover the Truth Behind the Data
+            </a>
+        </div>
+    </header>
+
+    <section id="data-section" class="py-24 px-4 max-w-6xl mx-auto relative">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Truth #1: It is <span class="text-neon">True Green Energy</span></h2>
+            <p class="text-slate-400 text-lg">Data Source: UNECE (2021) Life Cycle Greenhouse Gas Emissions</p>
+        </div>
+        <div class="glass-panel rounded-2xl p-8 md:p-12 shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-xl mb-8 leading-relaxed text-slate-200">
+                The public often assumes wind and solar are the ultimate green solutions. But when evaluating the entire life cycle—from mining and manufacturing to operation and decommissioning—nuclear energy's carbon footprint is staggeringly low. At just <strong class="text-neon">5.1 g CO₂eq/kWh</strong>, it is even cleaner than some solar PV technologies and vastly superior to fossil fuels.
+            </p>
+            <div class="relative h-[400px] w-full">
+                <canvas id="carbonChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Truth #2: When Nature Pauses, <span class="text-neon">Who Powers the Grid?</span></h2>
+                <p class="text-slate-400 text-lg">Data Source: U.S. Energy Information Administration (EIA, 2024)</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2 glass-panel rounded-2xl p-8" data-aos="fade-right">
+                    <div class="relative h-[350px] w-full">
+                        <canvas id="reliabilityChart"></canvas>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <h3 class="text-3xl font-bold mb-6">Unmatched Reliability</h3>
+                    <p class="text-xl text-slate-300 leading-relaxed mb-6">
+                        "Capacity factor" measures how often a plant runs at maximum power over a year. Wind and solar are at the mercy of the weather, hovering between 23% and 35%.
+                    </p>
+                    <p class="text-xl text-slate-300 leading-relaxed">
+                        In stark contrast, nuclear power plants achieve an incredible <strong class="text-neon text-3xl">92%</strong> capacity factor. They provide stable, clean baseload electricity 24/7, powering modern civilization through dark nights and windless days.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 max-w-6xl mx-auto relative">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Truth #3: Beyond the Fear, <span class="text-neon">Nuclear is Exceptionally Safe</span></h2>
+            <p class="text-slate-400 text-lg">Data Source: Our World in Data (Death rate per TWh of energy production)</p>
+        </div>
+        <div class="glass-panel rounded-2xl p-8 md:p-12 shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-xl mb-8 leading-relaxed text-slate-200">
+                Historical tragedies have instilled a deep fear of nuclear power. However, cold, hard statistics reveal a counterintuitive reality: even when accounting for all historical accidents, nuclear remains one of the <strong class="text-neon">safest energy sources humanity has ever used</strong>. Meanwhile, air pollution from fossil fuels silently claims millions of lives every single year.
+            </p>
+            <div class="relative h-[400px] w-full">
+                <canvas id="safetyChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-4 bg-gradient-to-t from-green-900/20 to-[#0b1120] text-center">
+        <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl font-black mb-8">Embracing Nuclear is Embracing Our Future</h2>
+            <p class="text-xl text-slate-300 mb-10 leading-relaxed">
+                Abandoning nuclear means remaining shackled to atmosphere-destroying coal and gas. For the sake of our forests, our oceans, and the next generation, let reason and science overcome the fear of the unknown.
+            </p>
+            <button class="bg-white text-green-700 font-bold py-4 px-10 rounded-full text-xl transition-all hover:bg-neon hover:text-gray-900 shadow-[0_0_30px_rgba(34,197,94,0.5)]">
+                Join the Initiative: Support Clean Nuclear
+            </button>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-slate-500 border-t border-slate-800">
+        <p>© 2026 Nuclear Climate Initiative. Data powered by UNECE, EIA, and Our World in Data.</p>
+    </footer>
+
+    <script>
+        // Initialize AOS Scroll Animation
+        AOS.init({ once: true, offset: 100 });
+
+        // Global Chart Configurations
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.font.family = 'Inter';
+        Chart.defaults.font.size = 14;
+
+        // 1. Carbon Emissions Chart (Bar)
+        new Chart(document.getElementById('carbonChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Coal', 'Gas', 'Solar PV', 'Wind', 'Nuclear'],
+                datasets: [{
+                    label: 'Lifecycle GHG Emissions (g CO₂eq/kWh)',
+                    data: [820, 430, 37, 12, 5.1],
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.7)',  // Red
+                        'rgba(249, 115, 22, 0.7)', // Orange
+                        'rgba(56, 189, 248, 0.7)', // Light Blue
+                        'rgba(56, 189, 248, 0.7)', // Light Blue
+                        'rgba(34, 197, 94, 1)'     // Neon Green
+                    ],
+                    borderColor: [
+                        '#ef4444', '#f97316', '#38bdf8', '#38bdf8', '#22c55e'
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal bars show the disparity better
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { title: { display: true, text: 'g CO₂eq / kWh' } }
+                }
+            }
+        });
+
+        // 2. Capacity Factor Chart (Doughnut)
+        new Chart(document.getElementById('reliabilityChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Nuclear (92%)', 'Natural Gas (59%)', 'Wind (34%)', 'Solar (23%)'],
+                datasets: [{
+                    data: [92, 59, 34, 23],
+                    backgroundColor: [
+                        'rgba(34, 197, 94, 1)',    // Neon Green
+                        'rgba(148, 163, 184, 0.5)',// Slate
+                        'rgba(56, 189, 248, 0.6)', // Light Blue
+                        'rgba(250, 204, 21, 0.6)'  // Yellow
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { color: '#e2e8f0', font: { size: 16 } } }
+                }
+            }
+        });
+
+        // 3. Safety Chart (Bar)
+        new Chart(document.getElementById('safetyChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Coal', 'Oil', 'Gas', 'Wind', 'Nuclear', 'Solar'],
+                datasets: [{
+                    label: 'Deaths per Terawatt-hour (TWh)',
+                    data: [24.6, 18.4, 2.8, 0.04, 0.03, 0.02],
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(249, 115, 22, 0.8)',
+                        'rgba(250, 204, 21, 0.8)',
+                        'rgba(56, 189, 248, 0.8)',
+                        'rgba(34, 197, 94, 1)',   // Neon Green
+                        'rgba(56, 189, 248, 0.8)'
+                    ],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + ' deaths / TWh';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: { 
+                        type: 'logarithmic', // Logarithmic scale needed due to the massive gap between coal and nuclear
+                        title: { display: true, text: 'Deaths per TWh (Log Scale)' } 
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
