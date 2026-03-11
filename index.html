@@ -3,132 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuclear Solution | The Future of Energy</title>
+    <title>Nuclear Energy: Saving Our Planet</title>
     
     <style>
-        body { background-color: #0b1120 !important; color: white !important; font-family: sans-serif; margin: 0; }
-        h1, p { visibility: visible !important; opacity: 1 !important; }
-        .chart-box { min-height: 300px; background: rgba(255,255,255,0.05); border-radius: 20px; margin: 20px 0; }
+        body { 
+            background-color: #0b1120 !important; 
+            color: #ffffff !important; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; text-align: center; background: linear-gradient(to bottom, #064e3b, #0b1120); }
+        .neon-text { color: #22c55e; }
+        .btn { background-color: #22c55e; color: #000; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
+        .chart-section { margin: 60px 0; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid #334155; }
+        .chart-placeholder { height: 300px; width: 100%; position: relative; }
+        h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        h2 { font-size: 2.2rem; border-left: 5px solid #22c55e; padding-left: 15px; margin-bottom: 20px; }
+        p { font-size: 1.2rem; color: #cbd5e1; }
     </style>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-[#0b1120] text-white">
+<body>
 
-    <header class="min-h-screen flex flex-col items-center justify-center text-center px-4">
-        <div class="max-w-4xl">
-            <span style="color: #22c55e; letter-spacing: 0.2em; font-weight: bold; text-transform: uppercase;">
-                Science-Driven Climate Action
-            </span>
-            <h1 class="text-5xl md:text-8xl font-black mt-6 mb-8 leading-tight">
-                NUCLEAR IS <br>
-                <span style="color: #22c55e;">CLEAN ENERGY.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10 leading-relaxed">
-                The data is clear: To stop global warming, we need the safest and most reliable 
-                zero-carbon energy source on the planet.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#data" class="bg-[#22c55e] text-black font-bold py-4 px-10 rounded-full hover:scale-105 transition-transform">
-                    View The Data
-                </a>
-            </div>
+    <header class="hero">
+        <div class="container">
+            <h1 class="font-black tracking-tighter">STOP WARMING. <br><span class="neon-text">START NUCLEAR.</span></h1>
+            <p>The only zero-emission energy source capable of replacing fossil fuels 24/7.</p>
+            <a href="#evidence" class="btn">SEE THE DATA</a>
         </div>
     </header>
 
-    
-
-    <main id="data" class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="container" id="evidence">
         
-        <div class="py-20 border-t border-gray-800" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-4">1. Near-Zero Emissions</h2>
-            <p class="text-gray-400 mb-8">Lifecycle CO2 equivalent per kWh (Lower is better)</p>
-            <div class="chart-box p-4">
+        <section class="chart-section">
+            <h2 class="font-bold">Lowest Carbon Footprint</h2>
+            <p>Per unit of electricity, nuclear produces the least amount of CO₂ emissions over its entire lifecycle—even less than solar power.</p>
+            <div class="chart-placeholder">
                 <canvas id="emissionChart"></canvas>
             </div>
-        </div>
+            
+        </section>
 
-        <div class="py-20 border-t border-gray-800" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-4">2. Maximum Reliability</h2>
-            <p class="text-gray-400 mb-8">Capacity factor: percentage of time the plant is producing power.</p>
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="chart-box p-4">
-                    <canvas id="reliabilityChart"></canvas>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-[#22c55e] mb-4">Always On.</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Nuclear plants run 24/7. Unlike solar or wind, they don't stop when the sun sets or the wind dies down. This is the backbone of a green grid.
-                    </p>
-                </div>
+        <section class="chart-section">
+            <h2 class="font-bold">Power Without Interruption</h2>
+            <p>While wind and solar depend on the weather, nuclear energy has a "Capacity Factor" of 92%, making it the most reliable backbone for a green grid.</p>
+            <div class="chart-placeholder">
+                <canvas id="reliabilityChart"></canvas>
             </div>
-        </div>
+        </section>
 
-        <div class="py-20 border-t border-gray-800" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-4">3. The Safest Option</h2>
-            <p class="text-gray-400 mb-8">Death rate per Terawatt-hour of electricity produced.</p>
-            <div class="chart-box p-4">
+        <section class="chart-section">
+            <h2 class="font-bold">The Safest Way to Power the World</h2>
+            <p>Statistically, nuclear energy causes fewer deaths per unit of energy than coal, oil, and even wind power. It's time to follow the science, not the fear.</p>
+            <div class="chart-placeholder">
                 <canvas id="safetyChart"></canvas>
             </div>
-            <p class="text-xs text-gray-500 mt-4 text-center italic">
-                *Statistical data includes all accidents and pollution-related illnesses.
-            </p>
-        </div>
+            
+        </section>
 
-    </main>
+        <section style="text-align: center; padding: 80px 0;">
+            <h2 style="border:none;">Save the Climate. <span class="neon-text">Support Nuclear.</span></h2>
+            <p>Join thousands of scientists and environmentalists in advocating for the most powerful tool against climate change.</p>
+            <button onclick="alert('Thank you for joining the clean energy movement!')" class="btn">JOIN THE INITIATIVE</button>
+        </section>
+    </div>
 
-    <section class="py-24 bg-green-900/20 text-center border-t border-green-500/30">
-        <h2 class="text-4xl font-black mb-6">ACT NOW FOR THE PLANET.</h2>
-        <p class="text-xl text-gray-400 mb-10">Support the expansion of clean, safe nuclear energy.</p>
-        <button onclick="alert('Thank you for supporting clean energy!')" class="bg-white text-black font-bold py-4 px-12 rounded-full text-xl hover:bg-[#22c55e] transition-colors">
-            JOIN US
-        </button>
-    </section>
-
-    <footer class="py-10 text-center text-gray-600 text-sm border-t border-gray-900">
-        © 2026 NUCLEAR CLIMATE INITIATIVE | DATA SOURCES: IPCC, IAEA, OUR WORLD IN DATA
+    <footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.8rem; border-top: 1px solid #1e293b;">
+        DATA SOURCES: IPCC, UNECE, OUR WORLD IN DATA (2026)
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 动画初始化
-        try {
-            AOS.init({ duration: 800, once: true });
-        } catch (e) { console.log("AOS failed to load, but that is fine."); }
-
-        // 图表默认颜色
-        Chart.defaults.color = '#94a3b8';
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#ffffff' } } },
+            scales: {
+                y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#94a3b8' } },
+                x: { ticks: { color: '#94a3b8' } }
+            }
+        };
 
         // 1. Emission Chart
         new Chart(document.getElementById('emissionChart'), {
             type: 'bar',
             data: {
-                labels: ['Coal', 'Natural Gas', 'Solar', 'Wind', 'Nuclear'],
+                labels: ['Coal', 'Gas', 'Solar', 'Wind', 'Nuclear'],
                 datasets: [{
-                    label: 'CO2 Emissions (g/kWh)',
-                    data: [820, 490, 45, 11, 4],
+                    label: 'CO2 eq per kWh',
+                    data: [820, 490, 48, 12, 4],
                     backgroundColor: ['#ef4444', '#f97316', '#fbbf24', '#38bdf8', '#22c55e']
                 }]
             },
-            options: { responsive: true, maintainAspectRatio: false }
+            options: chartOptions
         });
 
         // 2. Reliability Chart
         new Chart(document.getElementById('reliabilityChart'), {
-            type: 'doughnut',
+            type: 'bar',
             data: {
-                labels: ['Nuclear', 'Gas', 'Wind', 'Solar'],
+                labels: ['Nuclear (92%)', 'Natural Gas (55%)', 'Wind (35%)', 'Solar (25%)'],
                 datasets: [{
+                    label: 'Capacity Factor (%)',
                     data: [92, 55, 35, 25],
-                    backgroundColor: ['#22c55e', '#64748b', '#38bdf8', '#fbbf24']
+                    backgroundColor: '#22c55e'
                 }]
             },
-            options: { responsive: true, maintainAspectRatio: false }
+            options: chartOptions
         });
 
-        // 3. Safety Chart
+        // 3. Safety Chart (Logarithmic)
         new Chart(document.getElementById('safetyChart'), {
             type: 'bar',
             data: {
@@ -139,10 +127,9 @@
                     backgroundColor: ['#ef4444', '#f87171', '#fb923c', '#38bdf8', '#fbbf24', '#22c55e']
                 }]
             },
-            options: { 
-                responsive: true, 
-                maintainAspectRatio: false,
-                scales: { y: { type: 'logarithmic' } }
+            options: {
+                ...chartOptions,
+                scales: { y: { type: 'logarithmic', title: { display: true, text: 'Deaths (Log Scale)' } } }
             }
         });
     </script>
