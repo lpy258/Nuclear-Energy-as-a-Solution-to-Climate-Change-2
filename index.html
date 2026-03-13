@@ -4,258 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE ATOMIC RESCUE | 2026</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
     <style>
-        /* 引入专业科技字体 */
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@100;300;400;700;900&display=swap');
-        
-        body { 
-            background-color: #000; 
-            color: #fff; 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            overflow-x: hidden; 
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@100;300;400;900&display=swap');
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .font-title { font-family: 'Syncopate', sans-serif; }
-        
-        /* 动态背景画布 */
-        canvas#particleCanvas { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            z-index: -1; 
-        }
-
-        /* 霓虹发光效果 */
-        .neon-glow {
-            text-shadow: 0 0 15px rgba(34, 197, 94, 0.7), 0 0 30px rgba(34, 197, 94, 0.4);
-        }
-
-        .glass-card {
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .glass-card:hover {
-            border-color: #22c55e;
-            box-shadow: 0 0 40px rgba(34, 197, 94, 0.15);
-        }
-
-        /* 响应式大标题 */
-        .hero-title { 
-            font-size: clamp(2.5rem, 12vw, 9rem); 
-            line-height: 0.85; 
-            letter-spacing: -0.05em;
-        }
+        canvas#particleCanvas { position: fixed; top: 0; left: 0; z-index: -1; }
+        .hero-title { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.9; }
+        .neon-border { border: 1px solid #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.2); }
+        .data-card { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); transition: 0.3s; }
     </style>
 </head>
 <body>
 
     <canvas id="particleCanvas"></canvas>
 
-    <section class="relative min-h-screen flex items-center justify-center px-6 py-20">
-        <div class="text-center z-10 max-w-6xl">
-            <p class="font-title text-green-500 tracking-[0.8em] font-bold mb-6 uppercase text-[10px] md:text-xs">
-                Mission: Save The Biosphere
+    <section class="relative min-h-screen flex items-center justify-center p-6">
+        <div class="text-center z-10">
+            <p class="text-green-500 tracking-[1em] font-bold mb-4 uppercase text-sm">Mission: Save The Biosphere</p>
+            <h1 class="hero-title font-title font-black mb-8 italic">
+                THE ATOMIC<br><span class="text-green-500" style="text-shadow: 0 0 30px #22c55e;">RESCUE</span>
+            </h1>
+            
+            <p class="max-w-xl mx-auto text-slate-400 text-lg md:text-xl mb-6 font-light tracking-widest italic opacity-80">
+                While the world debates, a <span class="text-white font-normal">proven hero</span> waits in the shadows.
             </p>
             
-            <h1 class="hero-title font-title font-black mb-10 italic">
-                THE ATOMIC<br><span class="text-green-500 neon-glow">RESCUE</span>
-            </h1>
-
-            <p class="max-w-3xl mx-auto text-xl md:text-2xl text-slate-400 font-light tracking-widest leading-relaxed italic opacity-90 mb-12">
-                While the world debates, a <span class="text-white font-normal border-b border-green-900">proven hero</span> waits in the shadows.
+            <p class="text-green-500 font-title text-sm md:text-xl tracking-tighter uppercase font-bold mb-10">
+                Dense. Reliable. Zero-Carbon.
             </p>
 
-            <h2 class="font-title text-xl md:text-4xl font-bold tracking-tighter uppercase mb-16 space-x-4 md:space-x-8">
-                <span class="text-green-500 neon-glow">Dense.</span> 
-                <span class="text-white">Reliable.</span> 
-                <span class="text-green-500 neon-glow">Zero-Carbon.</span>
-            </h2>
-
-            <a href="#evidence" class="inline-block border border-green-500 text-green-500 px-16 py-5 font-black uppercase tracking-[0.2em] hover:bg-green-500 hover:text-black transition-all duration-500 text-sm">
-                Access Data Core
+            <a href="#content" class="border-2 border-green-500 text-green-500 px-12 py-4 font-black hover:bg-green-500 hover:text-black transition-all">
+                ENTER THE CORE
             </a>
         </div>
     </section>
 
-    <main id="evidence" class="max-w-7xl mx-auto px-6 py-32 space-y-48 relative z-10">
+    <main id="content" class="max-w-6xl mx-auto px-6 py-20 space-y-32 relative z-10">
         
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-            <div class="space-y-8">
-                <h3 class="font-title text-green-500 text-sm tracking-widest font-bold">01 / LAND & DENSITY</h3>
-                <p class="text-slate-300 text-2xl md:text-3xl font-light leading-snug">
-                    Nuclear energy has the <span class="text-white font-black underline decoration-green-500 decoration-4 underline-offset-8">highest energy density</span> on the planet.
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="data-card p-8 neon-border">
+                <h2 class="font-title text-2xl mb-6 text-green-500">01 / EMISSIONS</h2>
+                
+                <p class="text-slate-300 text-lg leading-relaxed font-light">
+                    <span class="text-white font-black italic">Nuclear energy has the highest energy density on the planet.</span> One <span class="text-green-500 font-bold">uranium pellet</span>, the size of your fingertip, contains as much energy as a ton of coal or 149 gallons of oil.
                 </p>
-                <p class="text-slate-400 text-lg leading-loose font-light">
-                    One <span class="text-green-400 font-bold uppercase tracking-tighter italic">uranium pellet</span>, the size of your fingertip, contains as much energy as a <span class="text-white font-bold">ton of coal</span> or 149 gallons of oil.
-                </p>
-            </div>
-            <div class="glass-card p-10 rounded-sm">
-                <div class="h-80">
+                
+                <div class="mt-8 h-64">
                     <canvas id="emissionChart"></canvas>
                 </div>
             </div>
+            <div class="space-y-6">
+                <h3 class="text-5xl font-black italic uppercase">The <span class="text-green-500">Truth</span></h3>
+                <p class="text-gray-400">Pure physics, zero emissions. That is the baseline for 2050.</p>
+            </div>
         </div>
 
-        <div class="text-center space-y-12">
-            <h3 class="font-title text-green-500 text-sm tracking-widest font-bold">02 / RELIABILITY</h3>
-            <p class="text-4xl md:text-7xl font-black tracking-tighter italic text-white leading-tight uppercase">
-                Modern civilization runs <span class="text-green-500 neon-glow">24/7.</span>
-            </p>
-            <p class="max-w-3xl mx-auto text-slate-500 font-light text-xl md:text-2xl tracking-normal">
-                To bridge the gap when the sun sets and the wind stops, we need a heart that beats without interruption.
-            </p>
+        <div class="text-center">
+            <h2 class="font-title text-4xl mb-12">GRID STABILITY</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-1 px-4 mt-20">
-                <div class="p-12 border border-green-900 glass-card">
-                    <p class="text-xs text-slate-500 font-title mb-4">Capacity Factor</p>
-                    <div class="text-7xl font-black text-green-500">92%</div>
-                    <p class="text-[10px] mt-4 tracking-widest uppercase font-bold text-green-900">Nuclear</p>
+            <div class="mb-12">
+                <p class="text-3xl md:text-5xl font-black italic text-white leading-tight mb-4">
+                    MODERN CIVILIZATION RUNS <span class="text-green-500">24/7.</span>
+                </p>
+                <p class="text-slate-400 text-xl font-light tracking-wide">
+                    To bridge the gap when the sun sets and the wind stops, we need a heart that beats without interruption.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-gray-800 data-card">
+                    <div class="text-6xl font-black text-green-500">92%</div>
+                    <p class="text-xs tracking-widest text-gray-500 mt-2 uppercase">Nuclear Duty</p>
                 </div>
-                <div class="p-12 border border-green-900 glass-card">
-                    <p class="text-xs text-slate-500 font-title mb-4">Capacity Factor</p>
-                    <div class="text-7xl font-black text-white opacity-20">35%</div>
-                    <p class="text-[10px] mt-4 tracking-widest uppercase font-bold text-slate-800">Wind</p>
+                <div class="p-8 border border-gray-800 data-card">
+                    <div class="text-6xl font-black text-white opacity-40">35%</div>
+                    <p class="text-xs tracking-widest text-gray-500 mt-2 uppercase">Wind Duty</p>
                 </div>
-                <div class="p-12 border border-green-900 glass-card">
-                    <p class="text-xs text-slate-500 font-title mb-4">Capacity Factor</p>
-                    <div class="text-7xl font-black text-white opacity-20">25%</div>
-                    <p class="text-[10px] mt-4 tracking-widest uppercase font-bold text-slate-800">Solar</p>
+                <div class="p-8 border border-gray-800 data-card">
+                    <div class="text-6xl font-black text-white opacity-40">25%</div>
+                    <p class="text-xs tracking-widest text-gray-500 mt-2 uppercase">Solar Duty</p>
                 </div>
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-            <div class="order-2 lg:order-1 glass-card p-10 rounded-sm">
-                <div class="h-80">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 space-y-6 text-right">
+                <h3 class="text-5xl font-black italic uppercase">Survival <span class="text-green-500">Index</span></h3>
+                
+                <div class="border-r-4 border-green-500 pr-6">
+                    <p class="text-slate-300 text-xl font-light italic leading-relaxed">
+                        "While spectacular accidents capture headlines, the <span class="text-white font-bold">silent daily toll</span> of fossil fuel pollution kills millions."
+                    </p>
+                    <p class="text-green-500 font-bold mt-4 uppercase text-sm tracking-widest">
+                        Statistically, nuclear is the safest.
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 data-card p-8 neon-border">
+                <h2 class="font-title text-2xl mb-6 text-green-500">02 / SAFETY</h2>
+                <div class="h-64">
                     <canvas id="safetyChart"></canvas>
                 </div>
             </div>
-            <div class="order-1 lg:order-2 space-y-8">
-                <h3 class="font-title text-green-500 text-sm tracking-widest font-bold">03 / HUMAN SAFETY</h3>
-                <div class="border-l-4 border-red-600 pl-8 py-4">
-                    <p class="text-2xl md:text-3xl text-slate-200 font-light italic leading-relaxed">
-                        "While spectacular accidents capture headlines, the <span class="text-red-500 font-bold not-italic">silent daily toll</span> of fossil fuel pollution kills millions."
-                    </p>
-                </div>
-                <p class="text-slate-400 text-lg leading-relaxed font-light">
-                    Statistically, nuclear is the <span class="text-white font-bold underline decoration-green-500 decoration-2">safest energy source</span> ever deployed by mankind.
-                </p>
-            </div>
         </div>
 
-        <section class="py-40 text-center">
-            <h2 class="font-title text-4xl md:text-6xl font-black mb-12 leading-none text-white uppercase">
-                Time is <span class="text-red-600">running out.</span><br>
-                <span class="text-green-500">Support the core.</span>
-            </h2>
-            <button onclick="window.open('https://www.iaea.org', '_blank')" class="bg-green-500 text-black px-20 py-6 font-black text-xl hover:scale-110 transition-transform shadow-[0_0_50px_rgba(34,197,94,0.3)] uppercase tracking-widest">
-                Join the Initiative
-            </button>
-        </section>
     </main>
 
-    <footer class="py-20 text-center border-t border-slate-900">
-        <div class="max-w-4xl mx-auto px-6">
-            <p class="font-title text-[10px] text-slate-700 tracking-[0.5em] mb-8">
-                © 2026 THE CORE INITIATIVE | POWERING THE FUTURE RESPONSIBLY
-            </p>
-            <div class="flex flex-wrap justify-center gap-6 text-[9px] text-slate-600 font-bold uppercase tracking-widest">
-                <a href="https://unece.org/" class="hover:text-green-500 transition-colors">Source: UNECE</a>
-                <a href="https://ourworldindata.org/" class="hover:text-green-500 transition-colors">Source: Our World in Data</a>
-                <a href="https://www.ipcc.ch/" class="hover:text-green-500 transition-colors">Source: IPCC</a>
-            </div>
-        </div>
+    <footer class="py-20 text-center border-t border-gray-900">
+        <p class="text-gray-600 text-xs tracking-widest uppercase">© 2026 THE CORE | DATA: IPCC & UNECE</p>
     </footer>
 
     <script>
-        // 1. 动态粒子背景逻辑
+        // 背景动画脚本
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        function initCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
+        function initCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
         window.addEventListener('resize', initCanvas);
         initCanvas();
-
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedY = Math.random() * 0.8 + 0.2;
-                this.opacity = Math.random() * 0.4;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedY = Math.random() * 1 + 0.5;
+                this.opacity = Math.random() * 0.5;
             }
-            update() {
-                this.y += this.speedY;
-                if (this.y > canvas.height) this.y = 0;
-            }
-            draw() {
-                ctx.fillStyle = `rgba(34, 197, 94, ${this.opacity})`;
-                ctx.fillRect(this.x, this.y, this.size, this.size * 8);
-            }
+            update() { this.y += this.speedY; if (this.y > canvas.height) this.y = 0; }
+            draw() { ctx.fillStyle = `rgba(34, 197, 94, ${this.opacity})`; ctx.fillRect(this.x, this.y, this.size, this.size * 5); }
         }
-        for (let i = 0; i < 120; i++) particles.push(new Particle());
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animate);
-        }
+        for (let i = 0; i < 100; i++) particles.push(new Particle());
+        function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
         animate();
 
-        // 2. 图表配置
-        Chart.defaults.color = '#475569';
-        Chart.defaults.font.family = "'Inter', sans-serif";
-
+        // 图表脚本
+        Chart.defaults.color = '#666';
         new Chart(document.getElementById('emissionChart'), {
             type: 'bar',
             data: {
                 labels: ['Coal', 'Gas', 'Solar', 'Wind', 'Nuclear'],
-                datasets: [{ 
-                    data: [820, 490, 45, 12, 4], 
-                    backgroundColor: ['#111','#222','#333','#444','#22c55e'],
-                    borderRadius: 2
-                }]
+                datasets: [{ data: [820, 490, 45, 12, 4], backgroundColor: ['#333','#444','#555','#666','#22c55e'] }]
             },
-            options: { 
-                responsive: true, 
-                maintainAspectRatio: false, 
-                plugins: { legend: { display: false } },
-                scales: { 
-                    y: { grid: { color: 'rgba(255,255,255,0.05)' }, border: { display: false } },
-                    x: { grid: { display: false } }
-                }
-            }
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
         });
-
         new Chart(document.getElementById('safetyChart'), {
             type: 'bar',
             data: {
-                labels: ['Coal', 'Oil', 'Gas', 'Wind', 'Solar', 'Nuclear'],
-                datasets: [{ 
-                    data: [24.6, 18.4, 2.8, 0.04, 0.02, 0.01], 
-                    backgroundColor: ['#ef4444','#f87171','#fb923c','#38bdf8','#fbbf24','#22c55e'],
-                    borderRadius: 2
-                }]
+                labels: ['Coal', 'Oil', 'Gas', 'Wind', 'Nuclear'],
+                datasets: [{ data: [24.6, 18.4, 2.8, 0.04, 0.01], backgroundColor: ['#333','#444','#555','#666','#22c55e'] }]
             },
-            options: { 
-                responsive: true, 
-                maintainAspectRatio: false, 
-                scales: { 
-                    y: { type: 'logarithmic', grid: { color: 'rgba(255,255,255,0.05)' } },
-                    x: { grid: { display: false } }
-                }, 
-                plugins: { legend: { display: false } } 
-            }
+            options: { responsive: true, maintainAspectRatio: false, scales: { y: { type: 'logarithmic' } }, plugins: { legend: { display: false } } }
         });
     </script>
 </body>
