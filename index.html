@@ -102,7 +102,7 @@
         <section class="text-center max-w-4xl mx-auto">
             <h2 class="font-tech text-4xl font-bold mb-8 text-green-500">02. THE HEARTBEAT</h2>
             <p class="text-3xl font-black mb-10 text-white">A grid that never sleeps.</p>
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-4">
                 <div class="p-10 glass-card">
                     <p class="text-slate-500 text-xs font-bold uppercase mb-4">Nuclear</p>
                     <div class="text-6xl font-black text-green-500">92%</div>
@@ -119,6 +119,8 @@
                     <p class="mt-4 text-sm opacity-50 italic">Sun Dependent</p>
                 </div>
             </div>
+            <p class="text-[10px] text-slate-600 mb-12 uppercase tracking-[0.2em]">Source: U.S. Department of Energy (DOE) Capacity Factors</p>
+            
             <p class="text-slate-400 text-lg">
                 Modern civilization runs 24/7. To bridge the gap when the sun sets and the wind stops, we need a heart that beats without interruption.
             </p>
@@ -160,15 +162,13 @@
     </main>
 
     <footer class="py-20 px-6 border-t border-slate-900 text-center">
-        <p class="font-tech text-xs text-slate-600 tracking-[0.3em]">© 2026 THE CORE INITIATIVE | DATA: IPCC, UNECE & OUR WORLD IN DATA</p>
+        <p class="font-tech text-xs text-slate-600 tracking-[0.3em]">© 2026 THE CORE INITIATIVE | DATA: IPCC, DOE & OUR WORLD IN DATA</p>
     </footer>
 
     <script>
-        // 图表默认全局设置
         Chart.defaults.color = '#94a3b8';
         Chart.defaults.font.family = "'Inter', sans-serif";
 
-        // 1. Emission Chart (Lifecycle)
         new Chart(document.getElementById('emissionChart'), {
             type: 'bar',
             data: {
@@ -191,7 +191,6 @@
             }
         });
 
-        // 2. Safety Chart (Logarithmic)
         new Chart(document.getElementById('safetyChart'), {
             type: 'bar',
             data: {
