@@ -20,6 +20,7 @@
         
         .font-tech { font-family: 'Orbitron', sans-serif; }
         .neon-glow { text-shadow: 0 0 15px rgba(34, 197, 94, 0.6); }
+        .neon-red { text-shadow: 0 0 15px rgba(239, 68, 68, 0.6); }
         
         .bg-grid {
             background-image: linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
@@ -38,6 +39,7 @@
             align-items: center;    
             padding: 0 2rem;
             box-sizing: border-box;
+            overflow-y: auto; /* Allow scrolling if content is long on mobile */
         }
 
         .page-section.active {
@@ -54,7 +56,13 @@
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(34, 197, 94, 0.4);
+            transform: translateY(-5px);
         }
 
         nav button.active-nav {
@@ -62,12 +70,22 @@
             border-bottom: 2px solid #22c55e;
         }
 
-        .btn-nav {
-            transition: all 0.3s ease;
-            text-transform: uppercase;
+        .btn-action {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #22c55e;
+            color: #000;
+            font-weight: 800;
             font-family: 'Orbitron', sans-serif;
-            letter-spacing: 0.1em;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action:hover {
+            background: #fff;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
         }
 
         .highlight { color: #22c55e; font-weight: 700; }
@@ -82,151 +100,94 @@
                 <button onclick="showPage(1)" class="nav-link hover:text-green-500" id="nav-1">01. Footprint</button>
                 <button onclick="showPage(2)" class="nav-link hover:text-green-500" id="nav-2">02. Heartbeat</button>
                 <button onclick="showPage(3)" class="nav-link hover:text-green-500" id="nav-3">03. Truth</button>
-                <button onclick="showPage(4)" class="nav-link hover:text-red-500" id="nav-4">04. Action</button>
+                <button onclick="showPage(4)" class="nav-link hover:text-red-500" id="nav-4">04. Take Action</button>
             </div>
-            <div class="text-[8px] text-slate-500 font-tech flex flex-col items-end">
-                <span>V4.0.KEYBOARD_ENABLED</span>
-                <span>USE ARROWS ← →</span>
-            </div>
+            <div class="text-[8px] text-slate-500 font-tech">V5.0.ACTION_HUB</div>
         </div>
     </nav>
 
     <section id="page-0" class="page-section active">
         <div class="text-center">
-            <p class="font-tech text-green-400 tracking-[0.5em] mb-4 uppercase text-xs">Environment Defense Protocol</p>
             <h1 class="font-tech text-6xl md:text-9xl font-black mb-8 italic tracking-tighter leading-none">THE SILENT <br><span class="text-green-500 neon-glow">GIANT</span></h1>
-            <p class="max-w-xl mx-auto text-lg text-slate-400 font-light mb-12 uppercase tracking-widest">
-                <span class="text-white font-bold">Dense. Reliable. Zero-Carbon.</span>
-            </p>
-            <button onclick="showPage(1)" class="bg-green-500 text-black font-tech font-black px-12 py-5 skew-x-[-12deg] hover:bg-white transition-all uppercase text-xl shadow-lg shadow-green-500/20">
-                Enter Experience &rarr;
-            </button>
+            <button onclick="showPage(1)" class="bg-green-500 text-black font-tech font-black px-12 py-5 skew-x-[-12deg] hover:bg-white transition-all uppercase text-xl">Enter Experience &rarr;</button>
         </div>
     </section>
 
-    <section id="page-1" class="page-section">
-        <div class="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
-            <div class="text-left">
-                <h2 class="font-tech text-3xl text-green-500 mb-6">01. THE FOOTPRINT</h2>
-                <p class="text-2xl font-bold text-white mb-6 italic">"Highest energy density on Earth."</p>
-                <p class="text-slate-400 text-base leading-relaxed mb-8">
-                    One uranium pellet replaces <span class="highlight">1 ton of coal</span>. Nuclear uses <span class="highlight">100x less land</span> than solar farms, producing massive energy with a tiny physical footprint.
-                </p>
-                <div class="flex gap-4 mb-10">
-                    <div class="px-6 py-4 glass-card text-center flex-1">
-                        <p class="text-3xl font-black text-white">100x</p>
-                        <p class="text-[10px] text-green-500 uppercase font-bold">Land Saving</p>
-                    </div>
-                    <div class="px-6 py-4 glass-card text-center flex-1">
-                        <p class="text-3xl font-black text-white">4g</p>
-                        <p class="text-[10px] text-green-500 uppercase font-bold">CO2 / kWh</p>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <button onclick="showPage(0)" class="btn-nav border border-slate-700 px-6 py-3 hover:bg-white hover:text-black">Back</button>
-                    <button onclick="showPage(2)" class="btn-nav border border-green-500 text-green-500 px-6 py-3 hover:bg-green-500 hover:text-black">Next Section &rarr;</button>
-                </div>
+    <section id="page-1" class="page-section"><div class="text-white text-center"><h2>01. FOOTPRINT</h2><button onclick="showPage(2)">Next</button></div></section>
+    <section id="page-2" class="page-section"><div class="text-white text-center"><h2>02. HEARTBEAT</h2><button onclick="showPage(3)">Next</button></div></section>
+    <section id="page-3" class="page-section"><div class="text-white text-center"><h2>03. TRUTH</h2><button onclick="showPage(4)">Next</button></div></section>
+
+    <section id="page-4" class="page-section py-20">
+        <div class="max-w-6xl w-full">
+            <div class="text-center mb-12">
+                <h2 class="font-tech text-5xl md:text-7xl font-black text-red-600 neon-red mb-4 uppercase">Take Action</h2>
+                <p class="text-slate-400 text-lg">Awareness is only the beginning. Choose your path to impact.</p>
             </div>
-            <div class="glass-card p-8 w-full"><div class="h-[300px]"><canvas id="emissionChart"></canvas></div></div>
-        </div>
-    </section>
 
-    <section id="page-2" class="page-section">
-        <div class="max-w-4xl w-full text-center">
-            <h2 class="font-tech text-3xl text-green-500 mb-6">02. THE HEARTBEAT</h2>
-            <h3 class="text-4xl font-black text-white mb-8 uppercase italic">Stable. All-day. Every-day.</h3>
-            <p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto">
-                Solar and wind are intermittent. Nuclear is the only carbon-free source with a <span class="highlight">92% capacity factor</span>, powering the grid even when the sun sets.
-            </p>
             <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <div class="p-8 glass-card border-green-500/30">
-                    <p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Nuclear</p>
-                    <div class="text-6xl font-black text-green-500">92%</div>
+                <div class="glass-card p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="text-green-500 mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                        <h3 class="font-tech text-xl text-white mb-3">Join the Movement</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Connect with grassroots activists changing the narrative on the ground.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="https://www.generationatomic.org/" target="_blank" class="btn-action w-full text-center">Generation Atomic</a>
+                        <a href="https://standupfornuclear.org/" target="_blank" class="btn-action w-full text-center bg-slate-800 text-white">Stand Up For Nuclear</a>
+                    </div>
                 </div>
-                <div class="p-8 glass-card"><p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Wind</p><div class="text-6xl font-black text-blue-500">35%</div></div>
-                <div class="p-8 glass-card"><p class="text-slate-500 text-[10px] font-bold uppercase mb-2">Solar</p><div class="text-6xl font-black text-yellow-500">25%</div></div>
-            </div>
-            <div class="flex justify-center gap-4">
-                <button onclick="showPage(1)" class="btn-nav border border-slate-700 px-6 py-3 hover:bg-white hover:text-black">Back</button>
-                <button onclick="showPage(3)" class="btn-nav border border-green-500 text-green-500 px-10 py-3 hover:bg-green-500 hover:text-black">Next &rarr;</button>
-            </div>
-        </div>
-    </section>
 
-    <section id="page-3" class="page-section">
-        <div class="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
-            <div class="glass-card p-8"><div class="h-[300px]"><canvas id="safetyChart"></canvas></div></div>
-            <div class="text-left">
-                <h2 class="font-tech text-3xl text-green-500 mb-6">03. THE TRUTH</h2>
-                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                    Air pollution from coal/gas kills <span class="highlight">8 million</span> people every year. Nuclear is the <span class="highlight">safest energy source</span> in history, saving millions of lives by preventing toxic emissions.
-                </p>
-                <div class="flex gap-4">
-                    <button onclick="showPage(2)" class="btn-nav border border-slate-700 px-6 py-3 hover:bg-white hover:text-black">Back</button>
-                    <button onclick="showPage(4)" class="btn-nav bg-white text-black font-black px-10 py-3 hover:bg-green-500">Final Word &rarr;</button>
+                <div class="glass-card p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="text-green-500 mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg></div>
+                        <h3 class="font-tech text-xl text-white mb-3">Policy & Advocacy</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Support policy research and professional energy organizations.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="https://www.nei.org/" target="_blank" class="btn-action w-full text-center">Nuclear Energy Institute</a>
+                        <a href="https://world-nuclear.org/" target="_blank" class="btn-action w-full text-center bg-slate-800 text-white">World Nuclear Assoc.</a>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="text-green-500 mb-4"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
+                        <h3 class="font-tech text-xl text-white mb-3">Learn & Share</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Deepen your understanding with science-first data and resources.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="https://ourworldindata.org/nuclear-energy" target="_blank" class="btn-action w-full text-center">Our World in Data</a>
+                        <a href="https://www.ans.org/" target="_blank" class="btn-action w-full text-center bg-slate-800 text-white">American Nuclear Society</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="page-4" class="page-section">
-        <div class="text-center max-w-3xl">
-            <h2 class="font-tech text-7xl md:text-9xl font-black mb-8 tracking-tighter text-red-600 leading-none">TIME IS <br>RUNNING OUT.</h2>
-            <p class="text-slate-300 text-xl mb-12">The science is ready. Are you? Join the movement for a clean future.</p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <button onclick="alert('Supported!')" class="bg-green-500 text-black font-tech font-black px-12 py-6 text-2xl hover:scale-105 transition-all shadow-xl shadow-green-500/30">SUPPORT THE CORE</button>
-                <button onclick="showPage(0)" class="border border-white/20 text-white font-tech px-12 py-6 text-xl hover:bg-white hover:text-black">RESTART</button>
+            <div class="text-center">
+                <button onclick="showPage(0)" class="text-slate-500 font-tech text-[10px] hover:text-white transition-colors uppercase tracking-[0.3em]">&larr; Restart Experience</button>
             </div>
         </div>
     </section>
 
     <script>
         let currentPage = 0;
-        const totalPages = 5; // 0 to 4
+        const totalPages = 5;
 
         function showPage(index) {
             currentPage = index;
-            // Hide all
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-nav'));
-            
-            // Show target
             document.getElementById(`page-${index}`).classList.add('active');
-            
-            // Update Nav
             const navLink = document.getElementById(`nav-${index}`);
             if (navLink) navLink.classList.add('active-nav');
         }
 
-        // Keyboard Navigation Logic
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') { // Right arrow or Space to go forward
+            if (e.key === 'ArrowRight' || e.key === ' ') {
                 if (currentPage < totalPages - 1) showPage(currentPage + 1);
-            } else if (e.key === 'ArrowLeft') { // Left arrow to go back
+            } else if (e.key === 'ArrowLeft') {
                 if (currentPage > 0) showPage(currentPage - 1);
             }
         });
-
-        // Initialize Charts
-        Chart.defaults.color = '#94a3b8';
-        window.onload = function() {
-            new Chart(document.getElementById('emissionChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['Coal', 'Gas', 'Solar', 'Wind', 'Nuclear'],
-                    datasets: [{ data: [820, 490, 45, 12, 4], backgroundColor: ['#ef4444', '#f97316', '#fbbf24', '#38bdf8', '#22c55e'], borderRadius: 6 }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
-            new Chart(document.getElementById('safetyChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['Coal', 'Oil', 'Gas', 'Wind', 'Solar', 'Nuclear'],
-                    datasets: [{ data: [24.6, 18.4, 2.8, 0.04, 0.02, 0.01], backgroundColor: ['#ef4444', '#f87171', '#fb923c', '#38bdf8', '#fbbf24', '#22c55e'], borderRadius: 6 }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, scales: { y: { type: 'logarithmic' } }, plugins: { legend: { display: false } } }
-            });
-        };
     </script>
 </body>
 </html>
